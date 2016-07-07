@@ -30,6 +30,7 @@ const Features = (props) => {
             className={cx({
               'featuresTextIos': true,
               'pull-right': true,
+              'text-right': true,
               'center-block': true,
               animated: true,
               invisible: !triggersAnimation,
@@ -51,6 +52,7 @@ const Features = (props) => {
             className={cx({
               'featuresTextAndroid': true,
               'pull-left': true,
+              'text-left': true,
               'center-block': true,
               animated: true,
               invisible: !triggersAnimation,
