@@ -1,0 +1,15 @@
+@import "./customBootstrap/bootswatchCosmoCustom";
+
+@import "../components/backgrounds/whiteSection/whiteSection.style";
+@import "../components/backgrounds/blackSection/blackSection.style";
+
+@import "../components/sections/homeHeaderSection/homeHeaderSection.style";
+@import "../components/sections/homeHeaderSection/imagesCarousel/imageCarousel.style";
+
+@import "../components/sections/features/features";
+@import "../components/sections/summary/summary";
+@import "../components/sections/bottom/bottom";
+
+@import "../views/home/home.style";
+
+@import "./common.style";

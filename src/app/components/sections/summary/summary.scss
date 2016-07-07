@@ -1,0 +1,66 @@
+#headerSection {
+  padding: {
+    top: 0px !important;
+  }
+}
+
+#sumupTeleserviceStoreIcons {
+  margin: {
+    bottom : 40px;
+  }
+}
+.storeIcons
+{
+  margin: {
+    top: 9px;
+  }
+  height:40px;
+}
+.storeIconsSmall {
+  height: 60px;
+}
+
+.sumUpTeleserviceTitle {
+  margin: {
+    top: 10px;
+  }
+  font: {
+    family: 'open_sanslight', arial, sans-serif;
+  }
+  @media screen and (min-width: 768px) {
+    font: {
+      size: 64px;
+    }
+  }
+  color: #222222;
+  letter-spacing: 0px;
+}
+.sumUpTeleserviceSubTitle {
+  margin: {
+    bottom: 30px;
+  }
+  font: {
+    family: 'open_sanslight', arial, sans-serif;
+  }
+  @media screen and (min-width: 768px) {
+    font: {
+      size: 24px;
+    }
+  }
+  color:  #4A4A4A; //#2574A9;//#4A4A4A;
+  letter-spacing: 0px;
+}
+
+.app-sumup-title {
+  // color: #2574A9;
+  font: {
+    size: 22px;
+  }
+}
+
+.app-teleservice-title {
+  // color: #2574A9;
+  font: {
+    size: 22px;
+  }
+}

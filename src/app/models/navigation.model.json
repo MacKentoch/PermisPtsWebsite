@@ -1,0 +1,13 @@
+{
+  "brand": {
+    "label":    "PermisPts",
+    "link":     "/",
+    "imageUrl": "./public/img/PermisPtsIcon.png", 
+    "scrollTo": "scrollToHOME",
+    "spy":      false,
+    "smooth":   true,
+    "duration": 500
+  },
+  "leftLinks"   : [],
+  "rightLinks"  : []
+}
