@@ -26,6 +26,8 @@ import Scroll                 from 'react-scroll';
 const Element = Scroll.Element;
 const Events  = Scroll.Events;
 
+const version = 'v0.1.1';
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -45,6 +47,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
+    console.log(`hello! welcome to PermisPts ${version}`);
     Events.scrollEvent.register('begin', ()=>this.handleScrollBegin());
     Events.scrollEvent.register('end', ()=>this.handleScrollEnd());
   }
@@ -240,7 +243,7 @@ class Home extends Component {
   }
 
   handleWaypointLeave(here) {
-    console.info('waypoint leave: ', here);
+    // console.info('waypoint leave: ', here);
   }
 
 }
