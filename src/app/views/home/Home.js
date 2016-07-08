@@ -26,7 +26,7 @@ import Scroll                 from 'react-scroll';
 const Element = Scroll.Element;
 const Events  = Scroll.Events;
 
-const version = 'v0.1.1';
+const version = 'v0.1.2';
 
 class Home extends Component {
   constructor(props) {

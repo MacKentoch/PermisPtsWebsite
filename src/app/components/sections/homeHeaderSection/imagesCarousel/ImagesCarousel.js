@@ -27,14 +27,6 @@ const ImagesCarousel = ({ carousel }) => {
                   height={642}
                   alt={image.name}
                 />
-                {
-                  image.caption &&
-                  <Carousel.Caption>
-                    <h2 className="carousel__caption_text">
-                      {image.caption}
-                    </h2>
-                  </Carousel.Caption>
-                }
               </CarouselItem>
             );
           }
