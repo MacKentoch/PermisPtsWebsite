@@ -10,12 +10,12 @@ const Features = (props) => {
   return (
     <WhiteSection id="featuresSection">
       <div className="row">
-        <div className="col-md-6 pull-right">
+        <div className="col-md-6 pos__right">
           <img
             src={imgSrcIos}
             className={cx({
               'featuresImageIos': true,
-              'pull-left': true,
+              'pos__left': true,
               'img-responsive': true,
               'center-block': true,
               animated: true,
@@ -25,12 +25,11 @@ const Features = (props) => {
             alt="PermisPts">
           </img>
         </div>
-        <div className="col-md-6 pull-left">
+        <div className="col-md-6 pos__left">
           <h3
             className={cx({
               'featuresTextIos': true,
-              'pull-right': true,
-              'text-right': true,
+              'pos__right': true,
               'center-block': true,
               animated: true,
               invisible: !triggersAnimation,
@@ -47,12 +46,11 @@ const Features = (props) => {
         threshold={0.2}
       />
       <div className="row">
-        <div className="col-md-6 pull-right">
+        <div className="col-md-6 pos__right">
           <h3
             className={cx({
               'featuresTextAndroid': true,
-              'pull-left': true,
-              'text-left': true,
+              'pos__left': true,
               'center-block': true,
               animated: true,
               invisible: !triggersAnimation,
@@ -61,11 +59,11 @@ const Features = (props) => {
             { textAndroid }
           </h3>
         </div>
-        <div className="col-md-6 pull-left">
+        <div className="col-md-6 pos__left">
           <img
             src={imgSrcAndroid}
             className={cx({'featuresImageAndroid': true,
-             'pull-right': true,
+             'pos__right': true,
              'img-responsive': true,
              'center-block': true,
              animated: true,
