@@ -30,7 +30,7 @@ const ImagesCarousel = ({ carousel }) => {
                 {
                   image.caption &&
                   <Carousel.Caption>
-                    <h2>
+                    <h2 className="carousel__caption_text">
                       {image.caption}
                     </h2>
                   </Carousel.Caption>
