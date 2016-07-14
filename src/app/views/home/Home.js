@@ -9,7 +9,8 @@ import {
   Features,
   YoutubePreview,
   Bottom,
-  Summary
+  Summary,
+  BackToTop
 }                             from '../../components';
 import cx                     from 'classnames';
 import {
@@ -22,11 +23,12 @@ import imagesModel            from '../../models/app.images.model.json';
 import { ViewContainer }      from '../../containers';
 import Waypoint               from 'react-waypoint';
 import Scroll                 from 'react-scroll';
+import packageJSON            from '../../../../package.json';
 
 const Element = Scroll.Element;
 const Events  = Scroll.Events;
-
-const version = 'v0.1.2';
+const homeHeaderSectionTitle = 'PermisPts';
+const version = packageJSON.version;
 
 class Home extends Component {
   constructor(props) {
@@ -47,9 +49,11 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    console.log(`hello! welcome to PermisPts ${version}`);
-    Events.scrollEvent.register('begin', ()=>this.handleScrollBegin());
-    Events.scrollEvent.register('end', ()=>this.handleScrollEnd());
+    /* eslint-disable no-console */
+    console.log(`Hello! Welcome to PermisPts ${version}`);
+    /* eslint-enable no-console */
+    Events.scrollEvent.register('begin', () => this.handleScrollBegin());
+    Events.scrollEvent.register('end', () => this.handleScrollEnd());
   }
 
   componentWillUnmount() {
@@ -58,13 +62,6 @@ class Home extends Component {
   }
 
   render() {
-    const navigationClasses = cx({
-      'navbar':           true,
-      'navbar-default':   true,
-      'navbar-fixed-top': false,
-      'navbar-lighter':   false
-    });
-    const homeHeaderSectionTitle    = 'PermisPts';
     return(
       <div
         id="homeView"
@@ -72,11 +69,17 @@ class Home extends Component {
         <NavigationBar
           brand={this.state.navModel.brand}
           navModel={this.state.navModel}
-          cssClass={navigationClasses}
+          cssClass={cx({
+            'navbar':           true,
+            'navbar-default':   true,
+            'navbar-fixed-top': false,
+            'navbar-lighter':   false
+          })}
         />
         <ViewContainer
           isAnimated={true}>
           <Element
+            id="scrollToHOME"
             name="scrollToHOME"
             className="element">
             <HomeHeaderSection
@@ -173,6 +176,10 @@ class Home extends Component {
           </Element>
 
         </ViewContainer>
+        <BackToTop
+          minScrollY={260}
+          scrollTo={'scrollToHOME'}
+        />
       </div>
     );
   }

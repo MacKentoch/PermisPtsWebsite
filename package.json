@@ -1,12 +1,12 @@
 {
   "name": "permispts-website",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "PermisPts app website",
   "main": "src/index.js",
   "scripts": {
     "dev": "NODE_ENV=dev webpack",
     "prod": "NODE_ENV=production webpack -p --config webpack.production.config.babel.js ",
-    "start": "babel-node --presets es2015 ./server.js"
+    "start": "NODE_ENV=dev babel-node --presets es2015 ./server.js"
   },
   "keywords": [
     "react"
@@ -50,9 +50,11 @@
     "font-awesome": "4.5.0",
     "jquery": "2.2.1",
     "react": "0.14.8",
+    "react-addons-shallow-compare": "15.2.1",
     "react-bootstrap": "^0.29.5",
     "react-burger-menu": "1.5.3",
     "react-dom": "0.14.8",
+    "react-motion": "0.4.4",
     "react-router": "2.0.0",
     "react-scroll": "1.0.3",
     "react-svg-morph": "0.1.3",

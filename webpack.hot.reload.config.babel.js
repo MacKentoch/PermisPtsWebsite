@@ -3,7 +3,7 @@ import webpack  from 'webpack';
 
 const assetsDir = path.resolve(__dirname, 'public/assets');
 
-let config = {
+const config = {
   devtool: 'eval',
   entry: [
     'webpack-dev-server/client?http://localhost:3000',
@@ -17,7 +17,8 @@ let config = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    getImplicitGlobals()
+    getImplicitGlobals(),
+    setNodeEnv()
   ],
   module: {
     loaders: [{
@@ -44,6 +45,14 @@ function getImplicitGlobals() {
   return new webpack.ProvidePlugin({
     $: 'jquery',
     jQuery: 'jquery'
+  });
+}
+
+function setNodeEnv() {
+  return new webpack.DefinePlugin({
+    'process.env': {
+      'NODE_ENV': JSON.stringify('dev')
+    }
   });
 }
 

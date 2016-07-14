@@ -1,5 +1,3 @@
-'use strict';
-
 /**
 * a promised delay
 **/

@@ -10,6 +10,7 @@ import  {
 }                       from './sections';
 import NavigationBar    from './navigation/NavigationBar';
 import SectionSeparator from './sectionSeparator/SectionSeparator';
+import BackToTop        from './backToTop/BackToTop';
 
 export {
   // backgrounds
@@ -26,5 +27,6 @@ export {
   NavigationBar,
 
   // others
-  SectionSeparator
+  SectionSeparator,
+  BackToTop
 };

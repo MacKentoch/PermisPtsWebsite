@@ -1,5 +1,3 @@
-'use strict';
-
 class NumberTestClass {
   isEven(n) {
     if (this.isNumber(n)) {

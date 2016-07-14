@@ -2,7 +2,7 @@ import React, {
   Component,
   PropTypes
 }                     from 'react';
-import HumburgerMenu  from './humburgerMenu/HumburgerMenu';
+// import HumburgerMenu  from './humburgerMenu/HumburgerMenu';
 import Scroll         from 'react-scroll';
 
 const Link = Scroll.Link;
