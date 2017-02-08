@@ -1,8 +1,8 @@
-import webpack            from 'webpack';
-import path               from 'path';
-import ExtractTextPlugin  from 'extract-text-webpack-plugin';
-import autoprefixer       from  'autoprefixer';
-import precss             from 'precss';
+const webpack            = require('webpack');
+const path               = require('path');
+const ExtractTextPlugin  = require('extract-text-webpack-plugin');
+const autoprefixer       = require('autoprefixer');
+const precss             = require('precss');
 
 const assetsDir       = path.resolve(__dirname, 'public/assets');
 const nodeModulesDir  = path.resolve(__dirname, 'node_modules');
@@ -88,4 +88,4 @@ function uglify() {
   });
 }
 
-export default config;
+module.exports = config;

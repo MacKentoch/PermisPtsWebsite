@@ -1,7 +1,10 @@
 /* eslint-disable no-var, no-console */
-import webpack            from 'webpack';
-import WebpackDevServer   from 'webpack-dev-server';
-import config             from './webpack.hot.reload.config.babel';
+
+'use strict';
+
+const webpack            = require('webpack');
+const WebpackDevServer   = require('webpack-dev-server');
+const config             = require('./webpack.hot.reload.config');
 
 new WebpackDevServer(
   webpack(config), {

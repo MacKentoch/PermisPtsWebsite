@@ -1,23 +1,31 @@
-import webpack  from 'webpack';
-import path     from 'path';
+const path     = require('path');
+const webpack  = require('webpack');
 
-const assetsDir       = path.resolve(__dirname, 'public/assets');
-const nodeModulesDir  = path.resolve(__dirname, 'node_modules');
+const assetsDir = path.resolve(__dirname, 'public/assets');
 
 const config = {
+  devtool: 'eval',
   entry: [
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
     path.resolve(__dirname, 'src/app/index.js')
   ],
   output: {
     path: assetsDir,
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/public/assets/'
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    getImplicitGlobals(),
+    setNodeEnv()
+  ],
   module: {
     loaders: [{
       test: /\.jsx?$/,
-      loader: 'babel',
-      exclude: [nodeModulesDir]
-    }, {
+      loaders: ['react-hot', 'babel'],
+      include: path.join(__dirname, 'src/app')
+    },  {
       test: /\.scss$/,
       loader: 'style!css!sass'
     }, {
@@ -30,11 +38,7 @@ const config = {
       test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif)(\?\S*)?$/,
       loader: 'url?limit=100000@name=[name][ext]'
     }]
-  },
-  plugins: [
-    getImplicitGlobals(),
-    setNodeEnv()
-  ]
+  }
 };
 
 function getImplicitGlobals() {
@@ -52,4 +56,4 @@ function setNodeEnv() {
   });
 }
 
-export default config;
+module.exports = config;
