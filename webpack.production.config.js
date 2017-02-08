@@ -44,7 +44,7 @@ const config = {
     new webpack.optimize.AggressiveMergingPlugin(),
     uglify()
   ],
-  postcss: function () {
+  postcss() {
     return [precss, autoprefixer];
   }
 };

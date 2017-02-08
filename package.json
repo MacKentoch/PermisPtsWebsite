@@ -4,10 +4,10 @@
   "description": "PermisPts app website",
   "main": "src/index.js",
   "scripts": {
+    "start": "NODE_ENV=dev node ./server.js",
     "dev": "NODE_ENV=dev webpack",
     "prod": "NODE_ENV=production webpack -p --config webpack.production.config.js ",
-    "serve": "NODE_ENV=production node ./src/server",
-    "start": "NODE_ENV=dev node ./server.js"
+    "serve-prod": "NODE_ENV=production node ./src/server"
   },
   "keywords": [
     "react"
@@ -55,7 +55,7 @@
     "jquery": "^2.2.1",
     "react": "^15.2.1",
     "react-addons-shallow-compare": "^15.2.1",
-    "react-bootstrap": "^0.29.5",
+    "react-bootstrap": "^0.30.7",
     "react-burger-menu": "^1.5.3",
     "react-dom": "^15.2.1",
     "react-motion": "^0.4.4",

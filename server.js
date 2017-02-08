@@ -1,5 +1,4 @@
 /* eslint-disable no-var, no-console */
-
 'use strict';
 
 const webpack            = require('webpack');
@@ -9,6 +8,7 @@ const config             = require('./webpack.hot.reload.config');
 new WebpackDevServer(
   webpack(config), {
     publicPath: config.output.publicPath,
+    // contentBase: './public',
     hot: true,
     historyApiFallback: true
   }

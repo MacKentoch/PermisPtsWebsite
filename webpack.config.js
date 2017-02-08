@@ -1,8 +1,12 @@
-const webpack   = require('webpack');
-const path      = require('path');
+const webpack            = require('webpack');
+const path               = require('path');
+const ExtractTextPlugin  = require('extract-text-webpack-plugin');
+const autoprefixer       = require('autoprefixer');
+const precss             = require('precss');
 
 const assetsDir       = path.resolve(__dirname, 'public/assets');
 const nodeModulesDir  = path.resolve(__dirname, 'node_modules');
+const SPLIT_STYLE     = true;
 
 const config = {
   entry: [
@@ -18,11 +22,11 @@ const config = {
       loader: 'babel',
       exclude: [nodeModulesDir]
     }, {
-      test: /\.scss$/,
-      loader: 'style!css!sass'
-    }, {
       test: /\.css$/,
-      loader: 'style!css'
+      loader: SPLIT_STYLE ? ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader') : 'style!css!postcss'
+    }, {
+      test: /\.scss$/,
+      loader: SPLIT_STYLE ? ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader!sass-loader') : 'style!css!postcss!sass'
     }, {
       test: /\.json$/,
       loader: 'json'
@@ -34,7 +38,10 @@ const config = {
   plugins: [
     getImplicitGlobals(),
     setNodeEnv()
-  ]
+  ],
+  postcss() {
+    return [precss, autoprefixer];
+  }
 };
 
 function getImplicitGlobals() {
