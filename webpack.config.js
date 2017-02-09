@@ -3,18 +3,20 @@ const path               = require('path');
 const ExtractTextPlugin  = require('extract-text-webpack-plugin');
 const autoprefixer       = require('autoprefixer');
 const precss             = require('precss');
+const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 
 const assetsDir       = path.resolve(__dirname, 'public/assets');
 const nodeModulesDir  = path.resolve(__dirname, 'node_modules');
 const SPLIT_STYLE     = true;
 
 const config = {
-  entry: [
-    path.resolve(__dirname, 'src/app/index.js')
-  ],
+  entry: {
+    home: path.resolve(__dirname, 'src/app/index.js'),
+    privacy: path.resolve(__dirname, 'src/app/privacy.js')
+  },
   output: {
     path: assetsDir,
-    filename: 'bundle.js'
+    filename: '[name].bundle.js'
   },
   module: {
     loaders: [{
@@ -36,6 +38,8 @@ const config = {
     }]
   },
   plugins: [
+    new ExtractTextPlugin('app.styles.css'),
+    new CommonsChunkPlugin('commons.chunk.js'),
     getImplicitGlobals(),
     setNodeEnv()
   ],

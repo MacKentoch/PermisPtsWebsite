@@ -3,20 +3,29 @@ const path               = require('path');
 const ExtractTextPlugin  = require('extract-text-webpack-plugin');
 const autoprefixer       = require('autoprefixer');
 const precss             = require('precss');
+const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 
 const assetsDir = path.resolve(__dirname, 'public/assets');
 const SPLIT_STYLE     = true;
 
 const config = {
   devtool: 'eval',
-  entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
-    path.resolve(__dirname, 'src/app/index.js')
-  ],
+  entry: {
+    home: [
+      'webpack-dev-server/client?http://localhost:3000',
+      'webpack/hot/only-dev-server',
+      path.resolve(__dirname, 'src/app/index.js')
+    ],
+    privacy: [
+      'webpack-dev-server/client?http://localhost:3000',
+      'webpack/hot/only-dev-server',
+      path.resolve(__dirname, 'src/app/privacy.js')
+    ]
+  },
   output: {
     path: assetsDir,
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
+    // filename: 'bundle.js',
     publicPath: '/assets/'
   },
   module: {
@@ -43,6 +52,7 @@ const config = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new CommonsChunkPlugin('commons.chunk.js'),
     new ExtractTextPlugin('app.styles.css'),
     getImplicitGlobals(),
     setNodeEnv()

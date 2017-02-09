@@ -10,7 +10,12 @@
     "serve-prod": "NODE_ENV=production node ./src/server"
   },
   "keywords": [
-    "react"
+    "react",
+    "permis",
+    "Permis",
+    "PermisPts",
+    "iOS",
+    "android"
   ],
   "author": "Erwan DATIN (MacKentoch)",
   "license": "MIT",
